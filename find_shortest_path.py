@@ -1,6 +1,7 @@
 """find_shortest_path.py
 Chris Fisher, 2023
 
+Script to find and display the shortest path between two wiki pages.
 """
 import json
 from pathfinder import bfs
@@ -41,15 +42,14 @@ for key in graph_data["mapping"]:
     id_map[int(key)] = graph_data["mapping"][key]
 
 
-
-# TODO remove this and/or add some stuff for inputs on CLI or __name == __main__
+# Example start and end page IDs used in testing
 start = 351816
 end = 340102
 
 # Longest path from old data: 236128 -> 105596
-#try 71383, 105596
+# try 71383, 105596
 
-#print(f'Finding a path between {id_map[start]} and {id_map[end]}.')
+print(f'Finding a path between {id_map[start]} and {id_map[end]}.')
 
 search_start = datetime.now()
 

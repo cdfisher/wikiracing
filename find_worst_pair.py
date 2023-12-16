@@ -10,8 +10,8 @@ import json
 from datetime import datetime
 from traversal import bfs_traversal
 
-graph_file = 'rsc_7dec2023.json'
-#graph_file = 'osrs_7dec2023_noredir.json'
+graph_file = 'osrs_7dec2023_noredir.json'
+# graph_file = 'rsc_7dec2023.json'
 
 remove_redirects = False
 
@@ -85,4 +85,3 @@ print('Solution:\n')
 
 for i in range(longest_path_length):
     print(f'{i}) {path_names[i]}')
-

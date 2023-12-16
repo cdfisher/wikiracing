@@ -14,19 +14,19 @@ from datetime import datetime
 from time import sleep
 from get_redirect_target import parse
 
-#edges_file_name = 'rsc.txt'
-#titles_file_name = 'rsc_pages.txt'
 edges_file_name = 'osrs.txt'
 titles_file_name = 'osrs_pages.txt'
+# edges_file_name = 'rsc.txt'
+# titles_file_name = 'rsc_pages.txt'
 
-#output_name = 'rsc_7dec2023_noredir.json'
 output_name = 'osrs_7dec2023_noredir.json'
+# output_name = 'rsc_7dec2023_noredir.json'
 
 # Required in order to prevent some odd behavior caused by inclusion of some technical namespaces
 # OSRS
 allowable_namespaces = {0, 14, 110, 112, 118, 122, 3002}
 # RSC
-#allowable_namespaces = {0, 14, 110, 122}
+# allowable_namespaces = {0, 14, 110, 122}
 
 remove_redirects = True
 
@@ -154,12 +154,12 @@ if remove_redirects:
                 normalized_graph[redirects[k]] = list(set(adj_dict[k]).union(dest_set).difference(redir_set))
         else:
             if k in normalized_graph.keys():
-                normalized_graph[k] = list(set(adj_dict[k]).union(dest_set, set(normalized_graph[k])).difference(redir_set))
+                normalized_graph[k] = list(set(adj_dict[k]).union(dest_set,
+                                                                  set(normalized_graph[k])).difference(redir_set))
             else:
                 normalized_graph[k] = list(set(adj_dict[k]).union(dest_set).difference(redir_set))
 
     adj_dict = normalized_graph
-
 
 
 graph_json = {

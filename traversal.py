@@ -36,7 +36,6 @@ def bfs_traversal(graph: dict, start: int) -> list:
                         visited[v] = True
                         prev[v] = u
                         q.append(v)
-                    # This may need to move
                     # If there are no vertices left to traverse, return u and the path
                     if not q:
                         return get_bfs_path(u, prev)
@@ -53,6 +52,7 @@ def bfs_traversal(graph: dict, start: int) -> list:
 
 
 def get_bfs_path(end: int, prev: dict) -> list:
+    # Reconstructs shortest path
     stack = queue.LifoQueue()
     predecessor = prev[end]
     stack.put(end)

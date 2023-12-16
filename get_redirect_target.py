@@ -12,8 +12,8 @@ wiki graph.
 """
 import requests
 
-#API_URL = 'https://classic.runescape.wiki/api.php'
 API_URL = 'https://oldschool.runescape.wiki/api.php'
+# API_URL = 'https://classic.runescape.wiki/api.php'
 
 
 def parse(page_id):
@@ -28,7 +28,7 @@ def parse(page_id):
         "formatversion": "2",
         "redirects": 1
     }
-    headers = {"User-Agent": "Contact: cdfisher on GitHub"}
+    headers = {"User-Agent": "Contact: cdfisher on GitHub"}  # Descriptive user agent with contact info per wiki request
     req = requests.get(API_URL, headers=headers, params=params)
     try:
         res = req.json()

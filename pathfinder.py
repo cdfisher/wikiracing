@@ -49,6 +49,7 @@ def bfs(graph: dict, start: int, end: int) -> list:
 
 
 def get_bfs_path(end: int, prev: dict) -> list:
+    # Reconstructs shortest path
     stack = queue.LifoQueue()
     predecessor = prev[end]
     stack.put(end)
